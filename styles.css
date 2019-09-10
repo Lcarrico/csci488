@@ -42,6 +42,7 @@ Styles for the Nav Bar
 ul.navbar {
   list-style-type: none;
   padding-inline-start: 0px;
+  text-align: center;
 }
 
 ul.navbar li {
