@@ -16,18 +16,18 @@ Styles for the Structural Blocks
   margin:auto;
 }
 
-#header {
+header {
   height:300px;
   /* border: 1px #000 solid; */
   text-align: center;
 }
 
-#content {
+article {
   min-height:600px;
   /* border: 1px #000 solid; */
 }
 
-#footer {
+footer {
 
   height:100px;
   /* border: 1px #000 solid; */
