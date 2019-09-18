@@ -19,12 +19,13 @@
     }
 
     function hide(e){
-      e.target.style = "visibility: hidden;"
+      block = document.getElementById("invisiBlock");
+      block.style = "visibility: hidden;"
     }
 
     function unhide(e){
-      e.target.style = "visibility: visible;"
-    }
+      block = document.getElementById("invisiBlock");
+      block.style = "visibility: visible;"    }
 
     function slide(){
       block = document.getElementById("slider");
@@ -69,8 +70,9 @@
         <div id="slider" class="block right" onclick="slide();"> Click me to move box</div>
       </div>
       <br>
-      <div class="block" onmouseover="hide(event);" onmouseout="unhide(event);">Hover Over Me to Make me Disappear</div>
+      <div id="invisiBlock" class="block"></div>
       <br>
+      <p style="border: 1px solid white; width: 210px" onmouseover="hide(event);" onmouseout="unhide(event);">Hover here to hide block above.</p>
       <p> When "visibility: hidden" is used, the object will not be seen, but it will still take up space.
         When using "display: none", the object will not be visible, AND not take up space.
     </article>
