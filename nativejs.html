@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Native JS Page</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="HTML, Practice, College">
+  <meta name="description" content="This is a homework assignment for my class.">
+
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <script>
+    function openWindow() {
+      newWindow = window.open("", "", "width=100, height=100");
+      newWindow.resizeTo(screen.availWidth, screen.availHeight);
+      newWindow.focus();
+    }
+
+    function hide(e){
+      e.target.style = "visibility: hidden;"
+    }
+
+    function unhide(e){
+      e.target.style = "visibility: visible;"
+    }
+
+    function slide(){
+      block = document.getElementById("slider");
+      curClass = block.className;
+      if (curClass == "block right"){
+        block.className = "block left";
+      }
+      else {
+        block.className = "block right"
+      }
+
+    }
+
+
+
+    window.onload = function() {
+
+      var divBlockOne = document.getElementById("block1");
+      divBlockOne.onmouseenter = function () {
+        divBlockOne.innerHTML = "Hover Off Me To Change My Text Back";
+      };
+      divBlockOne.onmouseleave = function () {
+        divBlockOne.innerHTML = "Hover Over Me to Change My Text";
+      };
+    };
+  </script>
+
+
+</head>
+<body>
+  <div id="page_wrapper">
+    <header style="height:100px">
+      <h1>Native JS Example</h1>
+    </header>
+
+    <article>
+      <a href="#" onclick="openWindow();"> Open New Window </a>
+      <br><br>
+      <div id="block1" class="block">Hover Over Me to Change My Text</div>
+      <br>
+      <div style="border: 2px solid red;width:400px;height:100px">
+        <div id="slider" class="block right" onclick="slide();"> Click me to move box</div>
+      </div>
+      <br>
+      <div class="block" onmouseover="hide(event);" onmouseout="unhide(event);">Hover Over Me to Make me Disappear</div>
+      <br>
+      <p> When "visibility: hidden" is used, the object will not be seen, but it will still take up space.
+        When using "display: none", the object will not be visible, AND not take up space.
+    </article>
+
+    <footer class="flex-container">
+      <h5>Page developed by Leonardo Carrico</h5> <h5>Copyright© 2019.</h5>
+    </footer>
+
+  </div>
+
+</body>
+</html>

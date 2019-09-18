@@ -90,3 +90,27 @@ Styles for Footer Flex Container
   display: flex;
   justify-content: space-around;
 }
+
+/****************************************************************************
+Styles for Dynamic Javascript
+****************************************************************************/
+.block {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  color: black;
+}
+
+.left {
+  position: relative;
+  left: 0px;
+  transform: rotate(-360deg);
+  transition: transform 4s, left 4s;
+}
+
+.right {
+  position: relative;
+  left: 302px;
+  transform: rotate(360deg);
+  transition: transform 4s, left 4s;
+}
