@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Native JS Page</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="HTML, Practice, College">
+  <meta name="description" content="This is a homework assignment for my class.">
+
+  <!-- <link rel="stylesheet" type="text/css" href="normalize.css"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+
+  <script>
+    data = '[{"animal_id":4,"animal_type":"dog","animal_breeds":[{"breed_id":1,"breed_name":"Beagle"}, {"breed_id":2,"breed_name":"Poodle"},{"breed_id":3,"breed_name":"Hound"},{"breed_id":4,"breed_name":"Collie"}]}, {"animal_id":7,"animal_type":"cat","animal_breeds":[{"breed_id":1,"breed_name":"Tabby"},{"breed_id":2, "breed_name":"Calico"},{"breed_id":3,"breed_name":"Persian"}]},{"animal_id":11,"animal_type":"bat","animal_breeds":[{"breed_id":1,"breed_name":"Hoary"},{"breed_id":2,"breed_name":"Egyptian Fruit"},{"breed_id":3,"breed_name":"Spotted"},{"breed_id":4,"breed_name":"Leaf-nosed"}]},{"animal_id":17,"animal_type":"rat","animal_breeds":[{"breed_id":1,"breed_name":"Sewer"},{"breed_id":2,"breed_name":"Bilge"},{"breed_id":3,"breed_name":"Dirty"}]}]';
+
+    data_arr = JSON.parse(data);
+    var animal = -1;
+
+    function reset(){
+      var article = document.getElementsByTagName("article")[0];
+      article.innerHTML = "";
+
+      for (var i in data_arr){
+        var animal = data_arr[i];
+        var type = animal.animal_type;
+        var id = animal.animal_id;
+
+        var radio1 = document.createElement("input");
+        radio1.setAttribute("type", "radio");
+        radio1.setAttribute("value", id);
+        radio1.setAttribute("name", "animal");
+        radio1.setAttribute("onclick", "addAnimals(this);");
+
+        var label1 = document.createElement("label");
+        label1.innerHTML = " " + type +"s";
+
+        article.appendChild(radio1);
+        article.appendChild(label1);
+        article.appendChild(document.createElement("br"));
+      }
+
+
+      var div = document.createElement("div");
+      div.setAttribute("class", "animals");
+      article.appendChild(document.createElement("br"));
+      article.appendChild(div);
+
+      var btn = document.createElement("button");
+      btn.setAttribute("type", "button");
+      btn.setAttribute("onclick", "reset();")
+      btn.innerHTML = "Reset";
+      article.appendChild(btn);
+
+
+    }
+
+    window.onload = reset;
+
+    function addAnimals(element){
+      var value = element.getAttribute("value");
+      console.log(value);
+      animal = getId(value);
+
+      var div = document.getElementsByClassName("animals")[0];
+      div.innerHTML = "";
+
+      for (var i in animal.animal_breeds){
+        var breed = animal.animal_breeds[i];
+
+        var check1 = document.createElement("input");
+        check1.setAttribute("type", "checkbox");
+        check1.setAttribute("value", breed.breed_id);
+        check1.setAttribute("onclick", "printValue(this);")
+
+        var label1 = document.createElement("label");
+        label1.innerHTML = breed.breed_name;
+        div.appendChild(check1);
+        div.appendChild(label1);
+        div.appendChild(document.createElement("br"));
+
+
+      }
+      div.appendChild(document.createElement("br"));
+
+    }
+    //drop breed id into console of checkboxed breed
+
+    function getId(value){
+      var animal;
+      for (var i in data_arr){
+        if (value == data_arr[i].animal_id){
+          animal = data_arr[i]
+        }
+      }
+      return animal;
+    }
+
+    function printValue(element){
+      var val = element.getAttribute("value");
+
+      var breeds = animal.animal_breeds
+      for (var i in breeds){
+        if (breeds[i].breed_id == val){
+          console.log(val);
+        }
+      }
+    }
+  </script>
+
+</head>
+<body>
+  <div id="page_wrapper">
+    <header style="height:100px">
+      <h1>Lesson 5 </h1>
+    </header>
+    <article>
+    </article>
+
+    <footer class="flex-container">
+      <h5>Page developed by Leonardo Carrico</h5> <h5>Copyright© 2019.</h5>
+    </footer>
+
+  </div>
+
+</body>
+</html>
