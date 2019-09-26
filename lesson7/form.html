@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <h2>Lesson 7 - Forms</h2>
+
+  <form action="http://cknuckles.com/csci488/examples/echo.php">
+    Name:<br>
+    <input type="text" name="name" value="John">
+    <br><br>
+
+    Email:<br>
+    <input type="text" name="email" value="johmsmith@mail.com">
+    <br><br>
+
+    Age:<br>
+    <input type="number" name="age" value="21">
+    <br><br>
+
+    Mood:<br>
+    Sad <input type="range" name="mood" value="50"> Happy
+    <br>
+
+    Bio:<br>
+    <input type="textarea" name="bio" value="I'm a 21 year old John.">
+    <br><br>
+
+    Are you:<br>
+    Hungry <input type="checkbox" name="hungry"><br>
+    Thirsty <input type="checkbox" name="thirsty"><br>
+    Craving <input type="checkbox" name="craving"><br>
+    <br>
+
+    Gender: <br>
+    Male <input type="radio" name="gender"><br>
+    Female <input type="radio" name="gender"><br>
+    <br>
+
+    Year of Graduation: <br>
+    2019 <input type="radio" name="graduation"><br>
+    2020 <input type="radio" name="graduation"><br>
+    2021 <input type="radio" name="graduation"><br>
+    <br>
+
+    Favorite Building:
+    <select name="fav_building">
+      <option value="yh">Young Hall</option>
+      <option value="lib">Library</option>
+      <option value="mohr">Student Center</option>
+    </select>
+    <br><br>
+
+    Buildings Visited:<br>
+    <select name="visited_buildings" size="3" multiple>
+      <option value="yh">Young Hall</option>
+      <option value="lib">Library</option>
+      <option value="mohr">Student Center</option>
+    </select>
+
+    <br><br>
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+
+  </form>
+
+</body>
+
+</html>

@@ -7,6 +7,7 @@ See my JQuery vs Dom Example.
 See my JQuery Each Iterator Example.
 */
 
+
 $(document).ready(function(){
 
   //grab the ul with nav-bar-type as fancier
@@ -89,4 +90,8 @@ $(document).ready(function(){
   $('ul[nav-bar-orientation="vertical"] li').css({"float": "none"});
   $('ul[nav-bar-orientation="vertical"]').css({"width": "60px"});
 
+  $("li[nav-item-type='bold'] a").each(function(){
+    litext = $(this).html();
+    $(this).html("<strong>" + litext + "</strong>");
+  });
 });
