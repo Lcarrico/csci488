@@ -6,7 +6,7 @@
   <title>Echo of HTML Form Submission</title>
 </head>
 <body>
-<table width="" cellspacing="0" cellpadding="3">
+<table width="" cellspacing="0" cellpadding="3" border="1px">
     <tr>
       <? $cols = array("name", "email", "age","mood","bio","hungry", "thirsty", "craving", "gender","graduation","fav_building","visited_buildings");
       foreach ($cols as $title){ ?>
