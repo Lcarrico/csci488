@@ -8,7 +8,7 @@
 <body>
 <table width="" cellspacing="0" cellpadding="3">
     <tr>
-      <? $cols = array("name", "email", "age","mood","bio","hungry", "thirsy", "craving", "gender","graduation","fav_building","visited_buildings");
+      <? $cols = array("name", "email", "age","mood","bio","hungry", "thirsty", "craving", "gender","graduation","fav_building","visited_buildings");
       foreach ($cols as $title){ ?>
         <th><?=$title?></th>
       <? } ?>
