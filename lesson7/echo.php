@@ -26,7 +26,7 @@ $submitted_form_data = array_merge($_GET,$_POST);
     </tr>
     <tr>
     <?foreach ($cols as $key) { ?>
-      <td><?=$value?></td>
+      <td><?=$submitted_form_data[$value]?></td>
     <? } ?>
     </tr>
 
