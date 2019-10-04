@@ -17,11 +17,11 @@ $submitted_form_data = array_merge($_GET,$_POST);
     <tr>
 
 
-      <? $cols = ("name", "email", "age","mood","bio","youare","gender","graduation","fav_building","visited_buildings");
+      <? $cols = array("name", "email", "age","mood","bio","youare","gender","graduation","fav_building","visited_buildings");
       foreach ($cols as $title){
         ?>
       <th><?=$title?></th>
-        
+
       <? } ?>
     </tr>
 
