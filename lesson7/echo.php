@@ -15,12 +15,17 @@ $submitted_form_data = array_merge($_GET,$_POST);
 
 <table width="" cellspacing="0" cellpadding="3">
     <tr>
-      <th>Submitted Name</th>
-      <td width="15">&nbsp;</td>
-      <th>Submitted Value</th>
+
+
+      <? $cols = ("name", "email", "age","mood","bio","youare","gender","graduation","fav_building","visited_buildings");
+      foreach ($cols as $title){
+        ?>
+      <th><?=$title?></th>
+        
+      <? } ?>
     </tr>
 
-    <? foreach ($submitted_form_data as $key=>$value) { ?>
+    foreach ($submitted_form_data as $key=>$value) { ?>
         <tr>
           <td><?=$key?></td>
           <td>&nbsp;</td>
