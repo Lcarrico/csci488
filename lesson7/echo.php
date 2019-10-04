@@ -11,9 +11,7 @@ $submitted_form_data = array_merge($_GET,$_POST);
   <title>Echo of HTML Form Submission</title>
 </head>
 <body>
-This script echos back the data in all <tt>name=value</tt> pairs submitted by any HTML form.
-<hr />
-<br />
+
 
 <table width="" cellspacing="0" cellpadding="3">
     <tr>
