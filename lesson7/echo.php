@@ -24,14 +24,11 @@ $submitted_form_data = array_merge($_GET,$_POST);
 
       <? } ?>
     </tr>
-    <?
-    foreach ($submitted_form_data as $key=>$value) { ?>
-        <tr>
-          <td><?=$key?></td>
-          <td>&nbsp;</td>
-          <td><?=$value?></td>
-        </tr>
+    <tr>
+    <?foreach ($cols as $key) { ?>
+      <td><?=$value?></td>
     <? } ?>
+    </tr>
 
 </table>
 
